@@ -1,8 +1,5 @@
-Here’s an enhanced version with improved clarity and structure:
-
-```markdown
 # Valorant Tracker Scraper
-
+```markdown
 This project is a web scraping tool designed to extract player data from the [Valorant Tracker](https://tracker.gg/valorant) website. It combines my hobby of playing Valorant with my interest in web scraping techniques using Puppeteer. The tool allows users to input a player's name, choose from a list of players, and retrieve their stats.
 
 ⚠️ **Note**: Web scraping may violate the terms and conditions of the website being scraped. I do not have access to, nor have I agreed to, any legal terms from Valorant Tracker. This project is for **educational purposes only**. If you choose to use or clone this project, do so at your **own risk**.
