@@ -59,6 +59,12 @@ Found 3 players
 Enter the number of your choice: 1
 JohnDoe#1234 selected
 Retrieving player data...
+{
+username: "JohnDoe#1234",
+stat: { Rating: Radiant 557RR, Level: 210}
+}
+Do you want to search for another player? (Y/N): N
+Scraping finished. Browser closed.
 ```
 
 ## How It Works
@@ -66,6 +72,20 @@ Retrieving player data...
 ### Stealth Mode
 
 This scraper uses the **Puppeteer Stealth Plugin** to avoid detection. Many websites have anti-bot measures, and the stealth plugin helps bypass these checks by mimicking real user behavior.
+⚠️ **Note**: You may want to set the headless to false, just to understand what actually the code doing, also sometimes they site block you if it so, please just restart the program, if it still persist maybe you need to wait for a moment, remember im not telling you to attack their website, please use this at your own risk.
+
+```bash
+const browser = await puppeteer.launch({
+    headless: false, // here set to false
+    args: [
+      '--disable-web-security',
+      '--disable-features=IsolateOrigins,site-per-process',
+      '--allow-running-insecure-content',
+      '--no-sandbox',
+      '--disable-setuid-sandbox'
+    ]
+  });
+```
 
 ### Random User-Agent
 
