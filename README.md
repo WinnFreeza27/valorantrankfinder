@@ -1,5 +1,3 @@
-Here’s your complete `README.md` with everything merged into a single document:
-
 ```markdown
 # Valorant Tracker Scraper
 
