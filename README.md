@@ -1,22 +1,24 @@
+Here’s an enhanced version with improved clarity and structure:
+
 ```markdown
 # Valorant Tracker Scraper
 
-This project is a web scraping tool designed to extract player data from the [Valorant Tracker](https://tracker.gg/valorant) website. The project combines my hobby of playing Valorant with my interest in studying web scraping techniques using Puppeteer. This tool allows users to input a player name, select from a list of found players, and retrieve their stats.
+This project is a web scraping tool designed to extract player data from the [Valorant Tracker](https://tracker.gg/valorant) website. It combines my hobby of playing Valorant with my interest in web scraping techniques using Puppeteer. The tool allows users to input a player's name, choose from a list of players, and retrieve their stats.
 
-⚠️ **Note**: Web scraping may not be entirely legal, depending on the terms and conditions of the website being scraped. I do not have access to, nor have I agreed to, any legal terms from Valorant Tracker. This project is for **educational purposes only**. If you choose to clone or use this project, do so at your **own risk**.
+⚠️ **Note**: Web scraping may violate the terms and conditions of the website being scraped. I do not have access to, nor have I agreed to, any legal terms from Valorant Tracker. This project is for **educational purposes only**. If you choose to use or clone this project, do so at your **own risk**.
 
 ## Features
 
-- Stealth mode scraping using Puppeteer to bypass detection.
-- Random user-agent and viewport setup to mimic human behavior.
+- Stealth scraping with Puppeteer to avoid detection.
+- Randomized user-agent and viewport settings to simulate human browsing behavior.
 - Option to search for another player or exit after each search.
 - Extracts player statistics such as rank, matches, and performance.
 
 ## Installation
 
-To get started with this project, you'll need Node.js and npm installed on your machine.
-```
-1. Clone this repository:
+To start, ensure that Node.js and npm are installed on your machine.
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/WinnFreeza27/valorantrankfinder.git
    ```
@@ -26,7 +28,7 @@ To get started with this project, you'll need Node.js and npm installed on your 
    cd valorant-tracker-scraper
    ```
 
-3. Install dependencies:
+3. Install the required dependencies:
    ```bash
    npm install
    ```
@@ -38,30 +40,30 @@ To get started with this project, you'll need Node.js and npm installed on your 
    node index.js
    ```
 
-2. Follow the on-screen prompts:
-   - Enter the player's name to search.
-   - Select the player from the list of found results.
-   - Choose to either view the player's data, search for another player, or exit the program.
+2. Follow the on-screen instructions:
+   - Enter the player’s name to search.
+   - Select a player from the list of results.
+   - Choose to either view the player’s stats, search for another player, or exit the program.
 
 ### Example
 
 ```
-Welcome to the Valorant Tracker scraper!
+Welcome to the Valorant Tracker Scraper!
 Puppeteer is starting up...
 Enter player name: JohnDoe
 Searching...
-Found 3 players
+Found 3 players:
 1. JohnDoe#1234
 2. JohnDoe#5678
 3. JohnDoe#9999
 4. Search Another Player
 0. Exit
 Enter the number of your choice: 1
-JohnDoe#1234 selected
+JohnDoe#1234 selected.
 Retrieving player data...
 {
 username: "JohnDoe#1234",
-stat: { Rating: Radiant 557RR, Level: 210}
+stats: { Rating: Radiant 557RR, Level: 210 }
 }
 Do you want to search for another player? (Y/N): N
 Scraping finished. Browser closed.
@@ -71,13 +73,13 @@ Scraping finished. Browser closed.
 
 ### Stealth Mode
 
-This scraper uses the **Puppeteer Stealth Plugin** to avoid detection. Many websites have anti-bot measures, and the stealth plugin helps bypass these checks by mimicking real user behavior.
+The scraper uses the **Puppeteer Stealth Plugin** to bypass anti-bot detection. Many websites employ measures to block bots, and this plugin helps evade those checks by mimicking real user actions.
 
-**Note**: You may want to set the headless to false, just to understand what actually the code doing, also sometimes the site block you from accessing their site, if this happened, please just restart the program, remember im not telling you to attack their website, please use this at your own risk.
+**Note**: You may want to set the `headless` option to `false` to see the browser in action. If the website blocks your access, try restarting the program. Please understand that this is for **educational purposes only**; I do not encourage using this tool to overload or attack any website.
 
-```bash
+```javascript
 const browser = await puppeteer.launch({
-    headless: false, // here set to false
+    headless: false, // set to false to observe browser actions
     args: [
       '--disable-web-security',
       '--disable-features=IsolateOrigins,site-per-process',
@@ -90,26 +92,24 @@ const browser = await puppeteer.launch({
 
 ### Random User-Agent
 
-To further reduce the chances of detection, the scraper sets a random user-agent string, which simulates different browsers and devices.
+To further avoid detection, the scraper assigns a random user-agent string, simulating different browsers and devices with each search.
 
 ### Player Search and Selection
 
-- The scraper allows you to search for a player's name, and it will retrieve a list of players found on the Valorant Tracker website.
-- After selecting a player, the scraper will fetch their statistics.
-- You can either search for another player or exit the program after retrieving data.
+- The user inputs a player’s name, and the scraper retrieves a list of matching players from Valorant Tracker.
+- After selecting a player, the scraper fetches their statistics.
+- Users can either search for another player or exit the program once the data is retrieved.
 
 ### Continuous Searching
 
-After completing one search, the program gives you the option to either search for another player or exit the program. The Puppeteer browser session remains open during this process, ensuring faster subsequent searches.
+After each search, the program gives users the option to search for another player or exit. The Puppeteer browser session stays open between searches to enable faster lookups.
 
 ## Legal Notice
 
-This project is purely for **educational purposes**. Web scraping may violate the terms of service of the website you are scraping. I do not encourage or endorse any illegal or unethical scraping activities. 
+This project is strictly for **educational purposes**. Web scraping may be against the terms of service of the websites involved. I do not support or encourage illegal or unethical scraping practices.
 
 - I am not affiliated with Valorant Tracker or Riot Games.
-- I do not have access to any agreements or terms of service related to the Valorant Tracker website.
-- Use of this project is at your **own risk**, and I am not responsible for any consequences that may arise from its use.
+- I have not agreed to any terms of service related to the Valorant Tracker website.
+- Use this project at your **own risk**; I am not liable for any legal or ethical issues that may arise.
 
-By using this project, you acknowledge that you understand the potential legal implications of web scraping and assume full responsibility for your actions.
-
-Make sure to replace the GitHub repository link under the `git clone` command with the actual link to your project, and if you're using an actual license like MIT, ensure to include that in your repository as well.
+By using this project, you acknowledge that you understand the potential legal implications of web scraping and accept full responsibility for your actions.
