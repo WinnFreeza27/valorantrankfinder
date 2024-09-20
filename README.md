@@ -17,6 +17,7 @@ This project is a web scraping tool designed to extract player data from the [Va
 ## Installation
 
 To start, ensure that Node.js and npm are installed on your machine.
+```
 
 1. Clone the repository:
    ```bash
