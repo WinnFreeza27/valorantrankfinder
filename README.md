@@ -15,7 +15,7 @@ This project is a web scraping tool designed to extract player data from the [Va
 ## Installation
 
 To get started with this project, you'll need Node.js and npm installed on your machine.
-
+```
 1. Clone this repository:
    ```bash
    git clone https://github.com/WinnFreeza27/valorantrankfinder.git
