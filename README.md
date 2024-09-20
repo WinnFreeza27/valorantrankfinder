@@ -73,7 +73,7 @@ Scraping finished. Browser closed.
 
 This scraper uses the **Puppeteer Stealth Plugin** to avoid detection. Many websites have anti-bot measures, and the stealth plugin helps bypass these checks by mimicking real user behavior.
 
-⚠️ **Note**: You may want to set the headless to false, just to understand what actually the code doing, also sometimes they site block you if it so, please just restart the program, if it still persist maybe you need to wait for a moment, remember im not telling you to attack their website, please use this at your own risk.
+**Note**: You may want to set the headless to false, just to understand what actually the code doing, also sometimes the site block you from accessing their site, if this happened, please just restart the program, remember im not telling you to attack their website, please use this at your own risk.
 
 ```bash
 const browser = await puppeteer.launch({
@@ -111,15 +111,5 @@ This project is purely for **educational purposes**. Web scraping may violate th
 - Use of this project is at your **own risk**, and I am not responsible for any consequences that may arise from its use.
 
 By using this project, you acknowledge that you understand the potential legal implications of web scraping and assume full responsibility for your actions.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-### Explanation:
-- **Merged Sections**: All the required sections (installation, usage, features, legal notice) are now in one file.
-- **Legal Notice**: Clear warning about the risks of scraping and that this project is for educational purposes.
-- **Example Usage**: Shows a typical interaction with the scraper for clarity.
 
 Make sure to replace the GitHub repository link under the `git clone` command with the actual link to your project, and if you're using an actual license like MIT, ensure to include that in your repository as well.
