@@ -72,6 +72,7 @@ Scraping finished. Browser closed.
 ### Stealth Mode
 
 This scraper uses the **Puppeteer Stealth Plugin** to avoid detection. Many websites have anti-bot measures, and the stealth plugin helps bypass these checks by mimicking real user behavior.
+
 ⚠️ **Note**: You may want to set the headless to false, just to understand what actually the code doing, also sometimes they site block you if it so, please just restart the program, if it still persist maybe you need to wait for a moment, remember im not telling you to attack their website, please use this at your own risk.
 
 ```bash
