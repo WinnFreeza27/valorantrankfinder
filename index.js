@@ -71,9 +71,9 @@ const scrapePlayerData = async (page) => {
     const elements = document.querySelectorAll('.info .player-handle'); // Select player handle elements
     return Array.from(elements).map(element => {
       const ign = element.querySelector('.trn-ign__username').textContent; // Get in-game name
-      if (element.querySelector('.trn-ign__discriminator') === null) return false; // Check for discriminator
-      const tag = element.querySelector('.trn-ign__discriminator').textContent; // Get discriminator
-      return `${ign}${tag}`; // Combine IGN and tag
+      if (element.querySelector('.trn-ign__discriminator') === null) return false; // Check for tag
+      const tag = element.querySelector('.trn-ign__discriminator').textContent; // Get tag
+      return `${ign}${tag}`; // Combine in game name and tag
     }).filter(element => element !== false); // Filter out invalid results
   });
 
@@ -107,7 +107,7 @@ const scrapePlayerData = async (page) => {
   await page.type('.search-box .search-box__bar form input', select, { delay: 100 }); // Type selected player's name
 
   await waitForTimeout(2000); // Wait for results to load
-  await page.waitForSelector('.player-row .info .player-handle .trn-ign__discriminator'); // Wait for player row to be present
+  await page.waitForSelector('.player-row .info .player-handle .trn-ign__discriminator'); // Wait for selected player row to be present
   await page.click('.player-row .info .player-handle .trn-ign__discriminator'); // Click on the selected player
   console.log('Loading player data...'); // Log loading message
   await waitForTimeout(5000); // Wait for player data to load
@@ -121,10 +121,10 @@ const scrapePlayerData = async (page) => {
     console.log('THIS PLAYER IS PRIVATE'); // Log if player is private
   }
 
-  await page.waitForSelector('.multi-switch__item'); // Wait for profile switch items
-  await page.click('.multi-switch__item'); // Click to switch profiles
+  await page.waitForSelector('.multi-switch__item'); // Wait for competitive tab to load
+  await page.click('.multi-switch__item'); // Click to competitive profiles tab
 
-  await waitForTimeout(1500); // Wait for the switch to take effect
+  await waitForTimeout(1500); // Wait for the tab to load everything
 
   // Check if the player has never played ranked matches this season
   const isNotRanked = await page.$eval('.status-indicator--message .lead', (elem) => {
@@ -191,7 +191,7 @@ const scrape = async () => {
   const userAgent = randomUserAgent.getRandom(); // Generate a random user agent
   await page.setUserAgent(userAgent); // Set the user agent for the page
 
-  // Set a random viewport size
+  // Set a random viewport size for the page
   await page.setViewport({
     width: Math.floor(Math.random() * (1920 - 800 + 1)) + 1080,
     height: Math.floor(Math.random() * (1080 - 600 + 1)) + 600,
