@@ -18,7 +18,7 @@ To get started with this project, you'll need Node.js and npm installed on your 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/valorant-tracker-scraper.git
+   git clone https://github.com/WinnFreeza27/valorantrankfinder.git
    ```
 
 2. Navigate to the project directory:
